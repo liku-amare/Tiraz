@@ -1,18 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<LinearLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:padding="10dp"-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:orientation="vertical">-->
+
+<!--    <ImageView-->
+<!--        style="@style/TextAppearance.AppCompat.Headline"-->
+<!--        android:layout_width="229dp"-->
+<!--        android:layout_height="88dp"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:src="@drawable/logo_no_back"-->
+<!--        android:layout_marginBottom="30dp"/>-->
+
+<!--    <GridLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:rowCount="2"-->
+<!--        android:columnCount="2">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="ጥራዝ 1"-->
+<!--                android:textSize="32sp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginBottom="10dp"/>-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="1999 ዓ.ም"-->
+<!--                android:textSize="22sp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginBottom="10dp"/>-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="100 መዝሙራት"-->
+<!--                android:textSize="22sp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginBottom="10dp"/>-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="ጥራዝ 2"-->
+<!--                android:textSize="32sp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginBottom="10dp"/>-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="1999 ዓ.ም"-->
+<!--                android:textSize="22sp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginBottom="10dp"/>-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="100 መዝሙራት"-->
+<!--                android:textSize="22sp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginBottom="10dp"/>-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="ጥራዝ 3"-->
+<!--                android:textSize="32sp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginBottom="10dp"/>-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="1999 ዓ.ም"-->
+<!--                android:textSize="22sp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginBottom="10dp"/>-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="100 መዝሙራት"-->
+<!--                android:textSize="22sp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginBottom="10dp"/>-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="ጥራዝ 4"-->
+<!--                android:textSize="32sp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginBottom="10dp"/>-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="1999 ዓ.ም"-->
+<!--                android:textSize="22sp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginBottom="10dp"/>-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="100 መዝሙራት"-->
+<!--                android:textSize="22sp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginBottom="10dp"/>-->
+<!--        </LinearLayout>-->
+
+<!--    </GridLayout>-->
+<!--</LinearLayout>-->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="238dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo2" />
 
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="299dp"
+        android:layout_height="498dp"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="166dp">
+
+        <LinearLayout
+            android:layout_width="141dp"
+            android:layout_height="209dp"
+            android:orientation="vertical"
+            app:layout_column="0"
+            app:layout_row="0">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="140dp"
+            android:layout_height="212dp"
+            android:orientation="vertical"
+            app:layout_column="1"
+            app:layout_row="0"></LinearLayout>
+    </androidx.gridlayout.widget.GridLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
