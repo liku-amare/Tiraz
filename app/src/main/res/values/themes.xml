@@ -13,4 +13,7 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="ErrorStyle">
+        <item name="android:textColor">@color/text_coffee</item>
+    </style>
 </resources>
