@@ -184,6 +184,7 @@
                 android:textSize="28sp" />
 
             <TextView
+                android:id="@+id/tiraz1_year"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -194,6 +195,7 @@
                 android:textSize="22sp" />
 
             <TextView
+                android:id="@+id/tiraz1_hymns"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -225,6 +227,7 @@
                 android:textSize="28sp" />
 
             <TextView
+                android:id="@+id/tiraz2_year"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -235,6 +238,7 @@
                 android:textSize="22sp" />
 
             <TextView
+                android:id="@+id/tiraz2_hymns"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -267,6 +271,7 @@
                 android:textSize="28sp" />
 
             <TextView
+                android:id="@+id/tiraz3_year"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -277,6 +282,7 @@
                 android:textSize="22sp" />
 
             <TextView
+                android:id="@+id/tiraz3_hymns"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -309,6 +315,7 @@
                 android:textSize="28sp" />
 
             <TextView
+                android:id="@+id/tiraz4_year"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -319,6 +326,7 @@
                 android:textSize="22sp" />
 
             <TextView
+                android:id="@+id/tiraz4_hymns"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -339,10 +347,11 @@
         android:layout_marginTop="34dp"
         android:layout_marginEnd="159dp"
         android:layout_marginBottom="79dp"
+        android:background="@drawable/shape"
         android:text="@string/button_setting_title"
         android:fontFamily="@font/niyala"
         android:textSize="22sp"
-        android:textColor="@color/back_white"
+        android:textColor="@color/text_coffee"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

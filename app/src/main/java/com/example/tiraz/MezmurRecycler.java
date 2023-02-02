@@ -1,6 +1,7 @@
 package com.example.tiraz;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -41,7 +42,7 @@ public class MezmurRecycler extends RecyclerView.Adapter<MezmurRecycler.ViewHold
     @Override
     public void onBindViewHolder(@NonNull MezmurRecycler.ViewHolder holder, int position) {
         Log.d("Item Count in OnBind", item_count + "");
-        JSONObject mezmur;
+        JSONObject mezmur = null;
         String title = "";
         int audio_id = 0;
         StringBuilder mezmur_tags = new StringBuilder();
@@ -68,10 +69,13 @@ public class MezmurRecycler extends RecyclerView.Adapter<MezmurRecycler.ViewHold
             holder.mezmurItemAudio.setText("ድምፅ ቅጅ: የለም");
         else
             holder.mezmurItemAudio.setText("ድምፅ ቅጅ: አለ");
+        JSONObject finalMezmur = mezmur;
         holder.mezmurItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "Test Pro", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, MezmurPlayer.class);
+                intent.putExtra("mezmur", finalMezmur.toString());
+                context.startActivity(intent);
             }
         });
     }
