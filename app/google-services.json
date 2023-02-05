@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "97083590580",
+    "project_id": "tiraz2023",
+    "storage_bucket": "tiraz2023.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97083590580:android:d94609f5ec932de2f094e1",
+        "android_client_info": {
+          "package_name": "com.example.tiraz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "97083590580-n23fp5dlbbds4ufrg81g7a635erkta7i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzatFrzC_sugiK8ue7NcEqj8yDLjZVJI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "97083590580-n23fp5dlbbds4ufrg81g7a635erkta7i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

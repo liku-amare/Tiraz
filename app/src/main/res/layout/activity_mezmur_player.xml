@@ -41,10 +41,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/controls"
-        android:padding="40dp">
+        android:background="@drawable/shape"
+        android:padding="25dp">
 
         <SeekBar
             android:id="@+id/seek_bar"
+            android:secondaryProgressTint="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -72,29 +74,42 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/total_time"
-            android:padding="10dp">
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:padding="2dp">
 
-            <ImageView
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+            <ImageButton
+                android:id="@+id/mezmur_player_previous"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:scaleType="fitCenter"
                 android:src="@drawable/baseline_skip_previous_24"
                 android:layout_centerVertical="true"
-                android:layout_alignParentStart="true"
-                android:id="@+id/mezmur_player_previous"/>
-            <ImageView
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_alignParentStart="true"/>
+
+            <ImageButton
+                android:id="@+id/mezmur_player_next"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:scaleType="fitCenter"
                 android:src="@drawable/baseline_skip_next_24"
                 android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true"
-                android:id="@+id/mezmur_player_next"/>
+                android:layout_alignParentEnd="true"/>
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/mezmur_player_play"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:scaleType="fitCenter"
                 android:layout_centerInParent="true"
-                android:src="@drawable/baseline_play_circle_24" />
+                android:visibility="gone"
+                android:src="@drawable/baseline_play_circle_24"/>
+
+            <ProgressBar
+                android:id="@+id/mezmur_player_loading"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_centerInParent="true"/>
 
         </RelativeLayout>
 
