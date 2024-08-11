@@ -143,15 +143,17 @@
         android:id="@+id/imageView"
         android:layout_width="238dp"
         android:layout_height="100dp"
-        android:layout_marginStart="86dp"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="53dp"
         android:layout_marginEnd="87dp"
         android:layout_marginBottom="23dp"
+        android:contentDescription="@string/logo_title"
         app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo2_no_back"
-        android:contentDescription="@string/logo_title" />
+        app:srcCompat="@drawable/logo2_no_back" />
 
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/gridLayout"
@@ -191,7 +193,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/niyala"
-                android:text="1999 ዓ.ም"
+                android:text="1999 ዓ.ም."
                 android:textSize="22sp" />
 
             <TextView
@@ -211,8 +213,8 @@
             android:layout_height="194dp"
             android:layout_margin="5dp"
             android:background="@drawable/shape"
-            android:theme="@style/ErrorStyle"
             android:orientation="vertical"
+            android:theme="@style/ErrorStyle"
             app:layout_column="1"
             app:layout_row="0">
 
@@ -234,7 +236,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/niyala"
-                android:text="1999 ዓ.ም"
+                android:text="1999 ዓ.ም."
                 android:textSize="22sp" />
 
             <TextView
@@ -278,7 +280,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/niyala"
-                android:text="1999 ዓ.ም"
+                android:text="1999 ዓ.ም."
                 android:textSize="22sp" />
 
             <TextView
@@ -322,7 +324,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/niyala"
-                android:text="1999 ዓ.ም"
+                android:text="1999 ዓ.ም."
                 android:textSize="22sp" />
 
             <TextView
@@ -344,7 +346,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="158dp"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="14dp"
         android:layout_marginEnd="159dp"
         android:layout_marginBottom="79dp"
         android:background="@drawable/shape"
