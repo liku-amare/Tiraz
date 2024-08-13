@@ -92,7 +92,8 @@ public class MezmurPlayer extends AppCompatActivity {
         // Get a non-default Storage bucket
         FirebaseStorage storage = FirebaseStorage.getInstance("gs://tiraz2023.appspot.com/");
 
-        String fileName = currentMezmur.audio_id + ".mp3";
+        // Example: gs://tiraz2023.appspot.com/tiraz4/4001.mp3
+        String fileName = "tiraz" + currentMezmur.tirazNo + "/" + currentMezmur.audio_id + ".mp3";
 
         StorageReference storageRef = storage.getReference();
         StorageReference pathReference = storageRef.child(fileName);

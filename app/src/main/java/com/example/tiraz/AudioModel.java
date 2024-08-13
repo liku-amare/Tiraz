@@ -11,7 +11,9 @@ public class AudioModel implements Serializable {
     int audio_id;
     String lyrics;
 
-    public AudioModel(int id, String title, String language,
+    int tirazNo;
+
+    public AudioModel(int id, int tirazNo, String title, String language,
                       String tags, int audio_id, String lyrics) {
         this.id = id;
         this.title = title;
@@ -19,6 +21,7 @@ public class AudioModel implements Serializable {
         this.tags = tags;
         this.audio_id = audio_id;
         this.lyrics = lyrics;
+        this.tirazNo = tirazNo;
 //        this.duration = duration;
     }
 
@@ -69,6 +72,10 @@ public class AudioModel implements Serializable {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    public int getTirazNo() { return tirazNo; }
+
+    public void setTirazNo(int tirazNo) { this.tirazNo = tirazNo; }
 
 //    public String getDuration() {
 //        return duration;

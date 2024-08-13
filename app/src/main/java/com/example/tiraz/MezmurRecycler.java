@@ -108,6 +108,7 @@ public class MezmurRecycler extends RecyclerView.Adapter<MezmurRecycler.ViewHold
                 mezmur_tags.delete(mezmur_tags.length()-2, mezmur_tags.length()-1);
                 AudioModel mezmurData = new AudioModel(
                         mezmur.getInt("mezmur_id"),
+                        tiraz_id,
                         mezmur.getString("mezmur_title"),
                         mezmur.getString("language"),
                         mezmur_tags.toString(),
