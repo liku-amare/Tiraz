@@ -87,7 +87,8 @@ public class MezmurPlayer extends AppCompatActivity {
             return;
         }
         progressBar.setVisibility(View.VISIBLE);
-        playButton.setVisibility(View.GONE);
+//        playButton.setVisibility(View.VISIBLE);
+
 
         // Get a non-default Storage bucket
         FirebaseStorage storage = FirebaseStorage.getInstance("gs://tiraz2023.appspot.com/");
@@ -127,9 +128,9 @@ public class MezmurPlayer extends AppCompatActivity {
         mediaPlayer.setOnPreparedListener(mediaPlayer1 -> {
             progressBar.setVisibility(View.GONE);
             playButton.setVisibility(View.VISIBLE);
-            playButton.setImageResource(R.drawable.baseline_pause_circle_24);
+            playButton.setImageResource(R.drawable.baseline_play_circle_24);
             totalTime.setText(convertToMMSS(String.valueOf(mediaPlayer.getDuration())));
-            mediaPlayer.start();
+//            mediaPlayer.start();
             seekBar.setProgress(0);
             seekBar.setMax(mediaPlayer.getDuration());
             updateSeekBar();
