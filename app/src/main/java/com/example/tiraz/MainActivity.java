@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         LinearLayout tirazOne, tirazTwo, tirazThree, tirazFour;
         TextView[][] textViews = new TextView[4][2];
+        SearchView searchView = findViewById(R.id.search_bar_view);
 
         int[][] textViewIds = new int[][]{
                 {R.id.tiraz1_year, R.id.tiraz1_hymns},
@@ -80,6 +83,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openTiraz(4);
+            }
+        });
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                if (!newText.isEmpty()) {
+//                    adapter.getFilter().filter(newText);
+                } else {
+//                    adapter.getFilter().filter(null);
+                }
+                return true;
             }
         });
     }

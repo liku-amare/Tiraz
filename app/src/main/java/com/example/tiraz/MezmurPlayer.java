@@ -67,7 +67,6 @@ public class MezmurPlayer extends AppCompatActivity {
         handler = new Handler();
 
         setResourcesWithMusic();
-
     }
 
     void setResourcesWithMusic(){
