@@ -1,10 +1,13 @@
 package com.example.tiraz;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
@@ -14,6 +17,12 @@ import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout tirazOne, tirazTwo, tirazThree, tirazFour;
         TextView[][] textViews = new TextView[4][2];
         SearchView searchView = findViewById(R.id.search_bar_view);
+        RecyclerView searchRecycler = findViewById(R.id.searchrecyclerview);
+        SearchAdapter searchAdapter;
+        List<AudioModel> mezmurList = new ArrayList<>();
 
         int[][] textViewIds = new int[][]{
                 {R.id.tiraz1_year, R.id.tiraz1_hymns},
@@ -47,19 +59,40 @@ public class MainActivity extends AppCompatActivity {
         String mezmurJSON = mezmurRecycler.getJson("tiraz_lyrics.json");
 
         String[][] tiraz_details = new String[4][2];
+
         try{
             JSONArray jsonArray = new JSONArray(mezmurJSON);
             for (int i = 0; i < 4; i ++){
                 tiraz_details[i][0] = jsonArray.getJSONObject(i).getString("year");
                 tiraz_details[i][1] = jsonArray.getJSONObject(i).getString("hymns_count");
             }
+            for (int i = 0; i < 4; i++){
+                JSONObject tirazJsonObject = jsonArray.getJSONObject(i);
+                JSONArray mezmurJsonArray = tirazJsonObject.getJSONArray("mezmurs");
+                int item_count = mezmurJsonArray.length();
+                for (int j = 0; j < item_count; j ++) {
+                    JSONObject mezmur = mezmurJsonArray.getJSONObject(j);
+                    String mezmurTitle = mezmur.getString("mezmur_title");
+                    AudioModel mezmurData = new AudioModel(
+                            mezmur.getInt("mezmur_id"),
+                            i+1,
+                            mezmur.getString("mezmur_title"),
+                            mezmur.getString("language"),
+                            "",
+                            mezmur.getInt("audio_id"),
+                            mezmur.getString("lyrics")
+                    );
+                    mezmurList.add(mezmurData);
+//                    mezmurTitles[mezmur_counter] = mezmurTitle;
+//                    mezmur_counter++;
+//                    Log.d("Mezmur Counter", String.valueOf(mezmur_counter));
+                }
+            }
+
         }
         catch(JSONException e){
             e.printStackTrace();
         }
-
-        setValues(textViews, tiraz_details);
-
 
         tirazOne.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +119,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+//        Log.d("Mezmur Titles: ", String.valueOf(mezmurTitles.length));
+//        titleList = Arrays.asList(mezmurTitles);
+        searchRecycler.setLayoutManager(new LinearLayoutManager(this));
+        searchAdapter = new SearchAdapter(getApplicationContext(), mezmurList);
+        searchRecycler.setAdapter(searchAdapter);
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -96,13 +135,25 @@ public class MainActivity extends AppCompatActivity {
             public boolean onQueryTextChange(String newText) {
 
                 if (!newText.isEmpty()) {
-//                    adapter.getFilter().filter(newText);
+                    searchRecycler.setVisibility(View.VISIBLE);
+                    searchAdapter.getFilter().filter(newText);
                 } else {
-//                    adapter.getFilter().filter(null);
+                    searchRecycler.setVisibility(View.GONE);
                 }
                 return true;
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        SearchView searchView = findViewById(R.id.search_bar_view); // Replace with your SearchView ID
+
+        if (searchView != null && !searchView.isIconified()) {
+            searchView.setIconified(true); // Collapse the SearchView
+        } else {
+            super.onBackPressed(); // Call the default back press behavior
+        }
     }
 
     void openTiraz(int id){

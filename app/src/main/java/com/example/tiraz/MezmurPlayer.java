@@ -70,6 +70,7 @@ public class MezmurPlayer extends AppCompatActivity {
     }
 
     void setResourcesWithMusic(){
+        Log.d("Current Index Value: ", String.valueOf(MyMediaPlayer.currentIndex));
         currentMezmur = mezmurList.get(MyMediaPlayer.currentIndex);
         mezmurTitle.setText(currentMezmur.getTitle());
         mezmurLyrics.setText(currentMezmur.getLyrics());
