@@ -168,7 +168,7 @@
             android:layout_gravity="center"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:tooltipText="Please Enter your Search" />
+            android:fontFamily="@font/niyala" />
 
         <ImageButton
             android:id="@+id/settings_button"

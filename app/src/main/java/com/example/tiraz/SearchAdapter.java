@@ -2,13 +2,14 @@ package com.example.tiraz;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,9 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     public void onBindViewHolder(ViewHolder holder, int position) {
         AudioModel audioModel = mezmurList.get(position);
         holder.textView.setText(audioModel.getTitle());
+        Typeface typeface = ResourcesCompat.getFont(context, R.font.niyala);
+        holder.textView.setTypeface(typeface);
+
         holder.textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

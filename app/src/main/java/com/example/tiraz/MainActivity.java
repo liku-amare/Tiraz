@@ -94,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        setValues(textViews, tiraz_details);
+
         tirazOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
