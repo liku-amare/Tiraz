@@ -83,9 +83,6 @@ public class MainActivity extends AppCompatActivity {
                             mezmur.getString("lyrics")
                     );
                     mezmurList.add(mezmurData);
-//                    mezmurTitles[mezmur_counter] = mezmurTitle;
-//                    mezmur_counter++;
-//                    Log.d("Mezmur Counter", String.valueOf(mezmur_counter));
                 }
             }
 
@@ -121,8 +118,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        Log.d("Mezmur Titles: ", String.valueOf(mezmurTitles.length));
-//        titleList = Arrays.asList(mezmurTitles);
+
         searchRecycler.setLayoutManager(new LinearLayoutManager(this));
         searchAdapter = new SearchAdapter(getApplicationContext(), mezmurList);
         searchRecycler.setAdapter(searchAdapter);
@@ -130,7 +126,10 @@ public class MainActivity extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                return false;
+                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+                intent.putExtra("query", query);
+                startActivity(intent);
+                return true;
             }
 
             @Override

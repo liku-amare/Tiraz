@@ -26,28 +26,28 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class MezmurRecycler extends RecyclerView.Adapter<MezmurRecycler.ViewHolder>{
+public class SearchRecycler extends RecyclerView.Adapter<SearchRecycler.ViewHolder>{
 
     Context context;
     int item_count = 1;
-    int tiraz_id;
+    String query;
 
     ArrayList<AudioModel> mezmurList = new ArrayList<>();
 
-    public MezmurRecycler (Context context, int tiraz_id){
+    public SearchRecycler (Context context, String query){
         this.context = context;
-        this.tiraz_id = tiraz_id;
+        this.query = query;
         populateMezmurList();
     }
     @NonNull
     @Override
-    public MezmurRecycler.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public SearchRecycler.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.mezmur_item, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MezmurRecycler.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull SearchRecycler.ViewHolder holder, int position) {
         AudioModel mezmurData = mezmurList.get(position);
         holder.mezmurOrderNo.setText(position + 1 + ". ");
 //        String title = position + 1 + ". " + mezmurData.getTitle();
@@ -96,7 +96,7 @@ public class MezmurRecycler extends RecyclerView.Adapter<MezmurRecycler.ViewHold
         try {
             JSONArray tirazJson;
             tirazJson = new JSONArray(tirazString);
-            JSONObject tirazJsonObject = tirazJson.getJSONObject(tiraz_id-1);
+            JSONObject tirazJsonObject = tirazJson.getJSONObject(2);
             Log.d("Item Count in View Holder", item_count + "");
             mezmurJsonArray = tirazJsonObject.getJSONArray("mezmurs");
             item_count = mezmurJsonArray.length();
@@ -113,7 +113,7 @@ public class MezmurRecycler extends RecyclerView.Adapter<MezmurRecycler.ViewHold
                 mezmur_tags.delete(mezmur_tags.length()-2, mezmur_tags.length()-1);
                 AudioModel mezmurData = new AudioModel(
                         mezmur.getInt("mezmur_id"),
-                        tiraz_id,
+                        2,
                         mezmur.getString("mezmur_title"),
                         mezmur.getString("language"),
                         mezmur_tags.toString(),

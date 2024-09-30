@@ -36,7 +36,8 @@
             android:text="Lyrics"
             android:fontFamily="@font/niyala"
             android:padding="8dp"
-            android:textSize="20sp"/>
+            android:lineSpacingMultiplier="1.5"
+            android:textSize="22sp"/>
     </ScrollView>
 
     <RelativeLayout

@@ -1,22 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchActivity">
+    android:orientation="vertical"
+    tools:context=".TirazActivity">
 
-    <SearchView
-        android:id="@+id/search_bar_view"
+    <TextView
+        android:id="@+id/search_page_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:tooltipText="Please Enter your Search"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="18dp"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:textColor="@color/teal_200"
+        android:fontFamily="@font/niyala"
+        android:text="TextView" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_result_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:padding="@dimen/default_gap"
+        tools:listitem="@layout/mezmur_item"
+        android:layout_gravity="center"
+        android:scrollbars="vertical"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbarThumbVertical="@drawable/scrollbar_thumb_custom"
+        android:background="@android:color/transparent"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

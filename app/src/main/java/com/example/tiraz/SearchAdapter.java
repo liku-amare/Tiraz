@@ -53,12 +53,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                 context.startActivity(intent);
             }
         });
-
-//        holder.itemView.setOnClickListener(v -> {
-//            Intent intent = new Intent(context, NewActivity.class);
-//            intent.putExtra("AUDIO_CODE", audio.getCode());
-//            context.startActivity(intent);
-//        });
     }
 
     @Override
