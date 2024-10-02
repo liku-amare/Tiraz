@@ -33,11 +33,12 @@ public class SearchRecycler extends RecyclerView.Adapter<SearchRecycler.ViewHold
     String query;
 
     ArrayList<AudioModel> mezmurList = new ArrayList<>();
+    ArrayList<AudioModel> resultList = new ArrayList<>();
 
     public SearchRecycler (Context context, String query){
         this.context = context;
         this.query = query;
-        populateMezmurList();
+        populateMezmurList(query);
     }
     @NonNull
     @Override
@@ -48,11 +49,9 @@ public class SearchRecycler extends RecyclerView.Adapter<SearchRecycler.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull SearchRecycler.ViewHolder holder, int position) {
-        AudioModel mezmurData = mezmurList.get(position);
+        AudioModel mezmurData = resultList.get(position);
         holder.mezmurOrderNo.setText(position + 1 + ". ");
-//        String title = position + 1 + ". " + mezmurData.getTitle();
         holder.mezmurItemTitle.setText(mezmurData.getTitle());
-//        String tags = "ገላጭ ቃላት፡ " + mezmurData.getTags();
         String tags = mezmurData.getTags();
         holder.mezmurItemTags.setText(tags);
         if (mezmurData.getAudio_id() == -1)
@@ -65,7 +64,7 @@ public class SearchRecycler extends RecyclerView.Adapter<SearchRecycler.ViewHold
                 MyMediaPlayer.getInstance().reset();
                 MyMediaPlayer.currentIndex = holder.getAdapterPosition();
                 Intent intent = new Intent(context, MezmurPlayer.class);
-                intent.putExtra("LIST", mezmurList);
+                intent.putExtra("LIST", resultList);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
@@ -90,15 +89,17 @@ public class SearchRecycler extends RecyclerView.Adapter<SearchRecycler.ViewHold
         }
     }
 
-    public void populateMezmurList(){
+    public void populateMezmurList(String query){
         String tirazString = getJson("tiraz_lyrics.json");
         JSONArray mezmurJsonArray;
         try {
             JSONArray tirazJson;
             tirazJson = new JSONArray(tirazString);
-            JSONObject tirazJsonObject = tirazJson.getJSONObject(2);
-            Log.d("Item Count in View Holder", item_count + "");
+            JSONObject tirazJsonObject = tirazJson.getJSONObject(0);
             mezmurJsonArray = tirazJsonObject.getJSONArray("mezmurs");
+            for (int i = 1; i < 4; i++){
+                mezmurJsonArray = concatenate(mezmurJsonArray, tirazJson.getJSONObject(i).getJSONArray("mezmurs"));
+            }
             item_count = mezmurJsonArray.length();
             Log.d("Item Count", "" + item_count);
             for (int i = 0; i < item_count; i ++) {
@@ -125,6 +126,15 @@ public class SearchRecycler extends RecyclerView.Adapter<SearchRecycler.ViewHold
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        // Perform search using query
+        String searchPattern = query.trim();
+        for (AudioModel audio : mezmurList){
+            if (audio.getTitle().contains(searchPattern) || audio.getLyrics().contains(searchPattern)){
+                resultList.add(audio);
+            }
+        }
+        item_count = resultList.size();
     }
 
     public String getJson(String fileName) {
@@ -141,5 +151,19 @@ public class SearchRecycler extends RecyclerView.Adapter<SearchRecycler.ViewHold
             e.printStackTrace();
         }
         return stringBuilder.toString();
+    }
+
+    public static JSONArray concatenate(JSONArray array1, JSONArray array2) throws JSONException {
+        JSONArray result = new JSONArray();
+
+        for (int i = 0; i < array1.length(); i++) {
+            result.put(array1.get(i));
+        }
+
+        for (int i = 0; i < array2.length(); i++) {
+            result.put(array2.get(i));
+        }
+
+        return result;
     }
 }
