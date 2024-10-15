@@ -36,14 +36,14 @@
 <!--                android:layout_width="wrap_content"-->
 <!--                android:layout_height="wrap_content"-->
 <!--                android:text="1999 ዓ.ም"-->
-<!--                android:textSize="22sp"-->
+<!--                android:textSize="18sp"-->
 <!--                android:layout_gravity="center"-->
 <!--                android:layout_marginBottom="10dp"/>-->
 <!--            <TextView-->
 <!--                android:layout_width="wrap_content"-->
 <!--                android:layout_height="wrap_content"-->
 <!--                android:text="100 መዝሙራት"-->
-<!--                android:textSize="22sp"-->
+<!--                android:textSize="18sp"-->
 <!--                android:layout_gravity="center"-->
 <!--                android:layout_marginBottom="10dp"/>-->
 <!--        </LinearLayout>-->
@@ -63,14 +63,14 @@
 <!--                android:layout_width="wrap_content"-->
 <!--                android:layout_height="wrap_content"-->
 <!--                android:text="1999 ዓ.ም"-->
-<!--                android:textSize="22sp"-->
+<!--                android:textSize="18sp"-->
 <!--                android:layout_gravity="center"-->
 <!--                android:layout_marginBottom="10dp"/>-->
 <!--            <TextView-->
 <!--                android:layout_width="wrap_content"-->
 <!--                android:layout_height="wrap_content"-->
 <!--                android:text="100 መዝሙራት"-->
-<!--                android:textSize="22sp"-->
+<!--                android:textSize="18sp"-->
 <!--                android:layout_gravity="center"-->
 <!--                android:layout_marginBottom="10dp"/>-->
 <!--        </LinearLayout>-->
@@ -90,14 +90,14 @@
 <!--                android:layout_width="wrap_content"-->
 <!--                android:layout_height="wrap_content"-->
 <!--                android:text="1999 ዓ.ም"-->
-<!--                android:textSize="22sp"-->
+<!--                android:textSize="18sp"-->
 <!--                android:layout_gravity="center"-->
 <!--                android:layout_marginBottom="10dp"/>-->
 <!--            <TextView-->
 <!--                android:layout_width="wrap_content"-->
 <!--                android:layout_height="wrap_content"-->
 <!--                android:text="100 መዝሙራት"-->
-<!--                android:textSize="22sp"-->
+<!--                android:textSize="18sp"-->
 <!--                android:layout_gravity="center"-->
 <!--                android:layout_marginBottom="10dp"/>-->
 <!--        </LinearLayout>-->
@@ -117,14 +117,14 @@
 <!--                android:layout_width="wrap_content"-->
 <!--                android:layout_height="wrap_content"-->
 <!--                android:text="1999 ዓ.ም"-->
-<!--                android:textSize="22sp"-->
+<!--                android:textSize="18sp"-->
 <!--                android:layout_gravity="center"-->
 <!--                android:layout_marginBottom="10dp"/>-->
 <!--            <TextView-->
 <!--                android:layout_width="wrap_content"-->
 <!--                android:layout_height="wrap_content"-->
 <!--                android:text="100 መዝሙራት"-->
-<!--                android:textSize="22sp"-->
+<!--                android:textSize="18sp"-->
 <!--                android:layout_gravity="center"-->
 <!--                android:layout_marginBottom="10dp"/>-->
 <!--        </LinearLayout>-->
@@ -192,8 +192,8 @@
 
         <LinearLayout
             android:id="@+id/tiraz1_home_button"
-            android:layout_width="143dp"
-            android:layout_height="194dp"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
             android:layout_margin="5dp"
             android:background="@drawable/shape"
             android:theme="@style/ErrorStyle"
@@ -206,10 +206,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="40dp"
                 android:fontFamily="@font/niyala"
                 android:text="ጥራዝ አንድ"
-                android:textSize="28sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/tiraz1_year"
@@ -220,7 +220,7 @@
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/niyala"
                 android:text="1999 ዓ.ም."
-                android:textSize="22sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/tiraz1_hymns"
@@ -230,13 +230,13 @@
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/niyala"
                 android:text="100 መዝሙራት"
-                android:textSize="22sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/tiraz2_home_button"
-            android:layout_width="143dp"
-            android:layout_height="194dp"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
             android:layout_margin="5dp"
             android:background="@drawable/shape"
             android:orientation="vertical"
@@ -249,10 +249,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="40dp"
                 android:fontFamily="@font/niyala"
                 android:text="ጥራዝ ሁለት"
-                android:textSize="28sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/tiraz2_year"
@@ -263,7 +263,7 @@
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/niyala"
                 android:text="1999 ዓ.ም."
-                android:textSize="22sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/tiraz2_hymns"
@@ -273,14 +273,58 @@
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/niyala"
                 android:text="100 መዝሙራት"
-                android:textSize="22sp" />
+                android:textSize="16sp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/tiraz3_home_button"
-            android:layout_width="143dp"
-            android:layout_height="194dp"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape"
+            android:theme="@style/ErrorStyle"
+            android:orientation="vertical"
+            app:layout_column="2"
+            app:layout_row="0">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="40dp"
+                android:fontFamily="@font/niyala"
+                android:text="ጥራዝ ሦስት"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tiraz3_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/niyala"
+                android:text="1999 ዓ.ም."
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tiraz3_hymns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/niyala"
+                android:text="100 መዝሙራት"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tiraz4_home_button"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
             android:layout_margin="5dp"
             android:background="@drawable/shape"
             android:theme="@style/ErrorStyle"
@@ -293,13 +337,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="40dp"
                 android:fontFamily="@font/niyala"
-                android:text="ጥራዝ ሦስት"
-                android:textSize="28sp" />
+                android:text="ጥራዝ አራት"
+                android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/tiraz3_year"
+                android:id="@+id/tiraz4_year"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -307,24 +351,24 @@
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/niyala"
                 android:text="1999 ዓ.ም."
-                android:textSize="22sp" />
+                android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/tiraz3_hymns"
+                android:id="@+id/tiraz4_hymns"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/niyala"
                 android:text="100 መዝሙራት"
-                android:textSize="22sp" />
+                android:textSize="16sp" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/tiraz4_home_button"
-            android:layout_width="143dp"
-            android:layout_height="194dp"
+            android:id="@+id/tiraz5_home_button"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
             android:layout_margin="5dp"
             android:background="@drawable/shape"
             android:theme="@style/ErrorStyle"
@@ -337,13 +381,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="40dp"
                 android:fontFamily="@font/niyala"
-                android:text="ጥራዝ አራት"
-                android:textSize="28sp" />
+                android:text="ጥራዝ አምስት"
+                android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/tiraz4_year"
+                android:id="@+id/tiraz5_year"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -351,17 +395,17 @@
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/niyala"
                 android:text="1999 ዓ.ም."
-                android:textSize="22sp" />
+                android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/tiraz4_hymns"
+                android:id="@+id/tiraz5_hymns"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/niyala"
                 android:text="100 መዝሙራት"
-                android:textSize="22sp" />
+                android:textSize="16sp" />
 
         </LinearLayout>
 
@@ -386,7 +430,7 @@
 <!--        android:layout_marginTop="20dp"-->
 <!--        android:text="ፍለጋ"-->
 <!--        android:fontFamily="@font/niyala"-->
-<!--        android:textSize="22sp"-->
+<!--        android:textSize="18sp"-->
 <!--        android:textColor="@color/text_coffee"-->
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
 <!--        app:layout_constraintStart_toStartOf="parent"-->
@@ -404,7 +448,7 @@
 <!--        android:background="@drawable/shape"-->
 <!--        android:text="@string/button_setting_title"-->
 <!--        android:fontFamily="@font/niyala"-->
-<!--        android:textSize="22sp"-->
+<!--        android:textSize="18sp"-->
 <!--        android:textColor="@color/text_coffee"-->
 <!--        app:layout_constraintBottom_toBottomOf="parent"-->
 <!--        app:layout_constraintEnd_toEndOf="parent"-->

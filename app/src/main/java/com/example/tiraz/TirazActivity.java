@@ -25,7 +25,7 @@ public class TirazActivity extends AppCompatActivity {
         }
 
         String[] tirazTitles = new String[]{
-                "አንድ", "ሁለት", "ሦስት", "አራት"
+                "አንድ", "ሁለት", "ሦስት", "አራት", "አምስት"
         };
         TextView tirazTitle = (TextView) findViewById(R.id.tiraz_page_title);
         mezmurRecycler = (RecyclerView) findViewById(R.id.mezmur_recycler);
