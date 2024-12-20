@@ -82,7 +82,7 @@ public class MezmurPlayer extends AppCompatActivity {
         if (currentMezmur.audio_id == -1){
             progressBar.setVisibility(View.GONE);
             playButton.setVisibility(View.VISIBLE);
-            Toast.makeText(this, "የድምፅ ቅጅ አልተገኘም።", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "የድምፅ ቅጅ አልተገኘም።", Toast.LENGTH_SHORT).show();
             playButton.setImageResource(R.drawable.baseline_not_found_24);
             return;
         }
