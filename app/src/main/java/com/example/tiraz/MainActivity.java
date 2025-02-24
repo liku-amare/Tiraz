@@ -26,6 +26,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int TIRAZ_BIZAT = 4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout tirazOne, tirazTwo, tirazThree, tirazFour, tirazFive;
         TextView[][] textViews = new TextView[5][2];
         SearchView searchView = findViewById(R.id.search_bar_view);
+//        searchView.setIconifiedByDefault(false);
         RecyclerView searchRecycler = findViewById(R.id.searchrecyclerview);
         SearchAdapter searchAdapter;
         List<AudioModel> mezmurList = new ArrayList<>();
@@ -43,10 +46,10 @@ public class MainActivity extends AppCompatActivity {
                 {R.id.tiraz2_year, R.id.tiraz2_hymns},
                 {R.id.tiraz3_year, R.id.tiraz3_hymns},
                 {R.id.tiraz4_year, R.id.tiraz4_hymns},
-                {R.id.tiraz5_year, R.id.tiraz5_hymns}
+//                {R.id.tiraz5_year, R.id.tiraz5_hymns}
         };
 
-        for (int i = 0; i < 5; i ++){
+        for (int i = 0; i < TIRAZ_BIZAT; i ++){
             textViews[i][0] = findViewById(textViewIds[i][0]);
             textViews[i][1] = findViewById(textViewIds[i][1]);
         }
@@ -55,20 +58,20 @@ public class MainActivity extends AppCompatActivity {
         tirazTwo = findViewById(R.id.tiraz2_home_button);
         tirazThree = findViewById(R.id.tiraz3_home_button);
         tirazFour = findViewById(R.id.tiraz4_home_button);
-        tirazFive = findViewById(R.id.tiraz5_home_button);
+//        tirazFive = findViewById(R.id.tiraz5_home_button);
 
         MezmurRecycler mezmurRecycler = new MezmurRecycler(this, 0);
         String mezmurJSON = mezmurRecycler.getJson("tiraz_lyrics.json");
 
-        String[][] tiraz_details = new String[5][2];
+        String[][] tiraz_details = new String[TIRAZ_BIZAT][2];
 
         try{
             JSONArray jsonArray = new JSONArray(mezmurJSON);
-            for (int i = 0; i < 5; i ++){
+            for (int i = 0; i < TIRAZ_BIZAT; i ++){
                 tiraz_details[i][0] = jsonArray.getJSONObject(i).getString("year");
                 tiraz_details[i][1] = jsonArray.getJSONObject(i).getString("hymns_count");
             }
-            for (int i = 0; i < 5; i++){
+            for (int i = 0; i < TIRAZ_BIZAT; i++){
                 JSONObject tirazJsonObject = jsonArray.getJSONObject(i);
                 JSONArray mezmurJsonArray = tirazJsonObject.getJSONArray("mezmurs");
                 int item_count = mezmurJsonArray.length();
@@ -119,12 +122,12 @@ public class MainActivity extends AppCompatActivity {
                 openTiraz(4);
             }
         });
-        tirazFive.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                openTiraz(5);
-            }
-        });
+//        tirazFive.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view) {
+//                openTiraz(5);
+//            }
+//        });
 
 
         searchRecycler.setLayoutManager(new LinearLayoutManager(this));
@@ -172,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void setValues(TextView[][] textViews, String[][] values){
-        for (int i = 0; i < 5; i++){
+        for (int i = 0; i < MainActivity.TIRAZ_BIZAT; i++){
             String year = values[i][0] + " ዓ.ም";
             String hymns = values[i][1] + " መዝሙራት";
             textViews[i][0].setText(year);

@@ -72,7 +72,8 @@ public class MezmurPlayer extends AppCompatActivity {
     void setResourcesWithMusic(){
         Log.d("Current Index Value: ", String.valueOf(MyMediaPlayer.currentIndex));
         currentMezmur = mezmurList.get(MyMediaPlayer.currentIndex);
-        mezmurTitle.setText(currentMezmur.getTitle());
+        String tempTitle = currentMezmur.tirazNo + "." + currentMezmur.id%1000 + " " + currentMezmur.getTitle();
+        mezmurTitle.setText(tempTitle);
         mezmurLyrics.setText(currentMezmur.getLyrics());
 
         playButton.setOnClickListener(v-> pausePlay());
